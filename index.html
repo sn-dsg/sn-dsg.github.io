@@ -42,7 +42,12 @@
 
 <footer class="ft">
     <h2 id="fT">Обсудить ваш проект:</h2>
-    <a href="https://funpay.com" target="_blank" class="btn" id="fB">Открыть профиль FunPay</a>
+    <a href="https://funpay.com/users/13442980/" target="_blank" class="btn" id="fB">Открыть профиль FunPay</a>
+    
+    <!-- КРАСИВАЯ СТРОЧКА КОПИРАЙТА -->
+    <div style="margin-top: 80px; font-size: 11px; color: #33333a; text-transform: uppercase; letter-spacing: 1px;" id="txtCopy">
+        © 2026 SNDSG. Все права защищены.
+    </div>
 </footer>
 
 <div class="lb" id="lightbox">
@@ -58,10 +63,9 @@
 const n=document.getElementById("nvB"),w=document.getElementById("wkS"),r=document.getElementById("bRu"),e=document.getElementById("bEn");
 n.onclick=()=>w.scrollIntoView({behavior:"smooth"});
 
-// ИСПРАВЛЕННЫЙ СЛОВАРЬ ПЕРЕВОДА
 const t={
-    ru: { nav: "Портфолио", status: "Online • Свободен для заказов", s1: "Отзывов на FunPay", s2: "Рейтинг продавца", s3n: "2 часа", s3t: "Средний срок сдачи", fT: "Обсудить ваш проект:", fB: "Открыть профиль FunPay" },
-    en: { nav: "Portfolio", status: "Online • Available for orders", s1: "Reviews on FunPay", s2: "Seller Rating", s3n: "2 hours", s3t: "Average Delivery Time", fT: "Discuss your project:", fB: "Open FunPay Profile" }
+    ru: { nav: "Портфолио", status: "Online • Свободен для заказов", s1: "Отзывов на FunPay", s2: "Рейтинг продавца", s3n: "2 часа", s3t: "Средний срок сдачи", fT: "Обсудить ваш проект:", fB: "Открыть профиль FunPay", copy: "© 2026 SNDSG. Все права защищены." },
+    en: { nav: "Portfolio", status: "Online • Available for orders", s1: "Reviews on FunPay", s2: "Seller Rating", s3n: "2 hours", s3t: "Average Delivery Time", fT: "Discuss your project:", fB: "Open FunPay Profile", copy: "© 2026 SNDSG. All rights reserved." }
 };
 
 function s(l){
@@ -75,6 +79,7 @@ function s(l){
     document.getElementById("s3t").innerText=t[l].s3t;
     document.getElementById("fT").innerText=t[l].fT;
     document.getElementById("fB").innerText=t[l].fB;
+    document.getElementById("txtCopy").innerText=t[l].copy; // Перевод копирайта
 }
 r.onclick=()=>s("ru");
 e.onclick=()=>s("en");
