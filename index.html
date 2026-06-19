@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>PORTFOLIO SNDSG.</title>
     <link rel="icon" type="image/png" href="favicon.png">
-    <!-- Подключаем внешний файл стилей -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -59,7 +58,7 @@
 const n=document.getElementById("nvB"),w=document.getElementById("wkS"),r=document.getElementById("bRu"),e=document.getElementById("bEn");
 n.onclick=()=>w.scrollIntoView({behavior:"smooth"});
 const t={ru:["Портфолио","Online • Свободен для заказов","Отзывов на FunPay","Рейтинг продавца","2 часа","Средний срок сдачи","Обсудить ваш проект:","Открыть профиль FunPay"],en:["Portfolio","Online • Available for orders","Reviews on FunPay","Seller Rating","2 hours","Average Delivery Time","Discuss your project:","Open FunPay Profile"]};
-function s(l){r.classList.toggle("act",l==="ru");e.classList.toggle("act",l==="en");n.innerText=t[l][0];document.getElementById("stT").innerText=t[l][1];document.getElementById("s1").innerText=t[l][2];document.getElementById("s2").innerText=t[l][3];document.getElementById("s3n").innerText=t[l][4];document.getElementById("s3t").innerText=t[l][5];document.getElementById("fT").innerText=t[l][6];document.getElementById("fB").innerText=t[l][7]}
+function s(l){r.classList.toggle("act",l==="ru");e.classList.toggle("act",l==="en");n.innerText=t[l];document.getElementById("stT").innerText=t[l];document.getElementById("s1").innerText=t[l];document.getElementById("s2").innerText=t[l];document.getElementById("s3n").innerText=t[l];document.getElementById("s3t").innerText=t[l];document.getElementById("fT").innerText=t[l];document.getElementById("fB").innerText=t[l]}
 r.onclick=()=>s("ru");e.onclick=()=>s("en");
 const b=Array.from(document.querySelectorAll(".wk .cd img")),c=document.getElementById("lightbox"),d=document.getElementById("lightboxImg"),x=document.getElementById("prevBtn"),y=document.getElementById("nextBtn"),g=document.getElementById("closeBtn");let a=0;function h(e){a=e;d.src=b[a].src;d.classList.add("sh")}b.forEach((b,d)=>{b.onclick=e=>{e.stopPropagation();c.classList.add("act");document.body.classList.add("modal-open");h(d)}});function i(){let c=a+1;c>=b.length&&(c=0);h(c)}function j(){let c=a-1;c<0&&(c=b.length-1);h(c)}y.onclick=e=>{e.stopPropagation();i()};x.onclick=e=>{e.stopPropagation();j()};function k(){c.classList.remove("act");d.classList.remove("sh");document.body.classList.remove("modal-open")}g.onclick=k;c.onclick=e=>{e.target!==c&&e.target.classList.contains("lbc")||k()};document.onkeydown=e=>{c.classList.contains("act")&&("ArrowRight"===e.key&&i(),"ArrowLeft"===e.key&&j(),"Escape"===e.key&&k())};
 </script>
